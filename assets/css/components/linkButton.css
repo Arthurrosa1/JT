@@ -3,6 +3,7 @@ a.link-button{
   align-items: center;
   justify-content: center;
   color: white;
+  margin-bottom: 90px;
 }
 
 a.link-button .icon{
