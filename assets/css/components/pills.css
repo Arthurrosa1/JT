@@ -12,6 +12,10 @@
   text-transform: uppercase;
 }
 
+.duke-pills ul li{
+  background-color: #2a2acc;
+}
+
 .pills ul li:first-child{
   margin-left: 0;
 }

@@ -3,15 +3,15 @@ a.link-button{
   align-items: center;
   justify-content: center;
   color: white;
-  margin-bottom: 90px;
+  margin-bottom: 100px;
 }
 
 a.link-button .icon{
   width: 32px;
   height: 32px;
-  padding: 3px;
-  background-color: var(--primary-color);
-  border: solid 1px white;
+  padding: 4px;
+  background-color: transparent;
+  border: solid 2px white;
   background-clip: content-box;
   border-radius: 50%;
   position: relative;
