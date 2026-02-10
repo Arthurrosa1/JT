@@ -18,7 +18,7 @@ body::before {
     transition: background-image 1s ease-in-out, opacity 1s ease-in-out;
 }
 
-.s-menu {
+.menu {
     padding: 1rem 0;
     width: 100%;
     text-align: center;
@@ -29,25 +29,25 @@ body::before {
     margin-bottom: 2rem;
 }
 
-.s-menu_item {
+.menuItem {
     display: inline-block;
     text-transform: uppercase;
     margin: 0 1rem;
 }
 
-.s-menu_icon {
+.menuItemIcon {
     width: 3rem;
     height: 3rem;
     vertical-align: middle;
 }
 
-.s-menu_icon img {
+.menuItem img {
     width: 2rem;
     height: 2rem;
     padding: 0.3rem 0;
 }
 
-.s-container {
+.container {
     position: relative;
     display: flex;
     align-items: center;
@@ -55,7 +55,7 @@ body::before {
     perspective: 3000px;
 }
 
-.s-card {
+.card {
     border: 0.2rem solid #ffffff;
     width: 100%;
     height: 70vh;
@@ -64,19 +64,19 @@ body::before {
     border-radius: 10px;
 }
 
-.s-card:nth-child(1) {
+.card:nth-child(1) {
     transform: rotateY(0deg) translateZ(50vw);
 }
 
-.s-card:nth-child(2) {
+.card:nth-child(2) {
     transform: rotateY(120deg) translateZ(50vw);
 }
 
-.s-card:nth-child(3) {
+.card:nth-child(3) {
     transform: rotateY(240deg) translateZ(50vw);
 }
 
-.s-card_background {
+.cardBackground {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -86,7 +86,7 @@ body::before {
     border-radius: 10px;
 }
 
-.s-card_image {
+.cardImage {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -94,7 +94,7 @@ body::before {
     transition: 1s ease-in-out;
 }
 
-.s-controller {
+.controller {
     position: absolute;
     display: flex;
     justify-content: center;
@@ -104,7 +104,7 @@ body::before {
     width: 100%;
 }
 
-.s-controller_button {
+.controllerButton {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -121,63 +121,51 @@ body::before {
     transition: transform 0.3s ease-in-out;
 }
 
-.s-controller_button:hover {
+.controllerButton:hover {
     transform: scale(1.1);
 }
 
-.s-controller_button:nth-child(2) {
+.controllerButton:nth-child(2) {
     margin: 0 3.75rem;
 }
 
-.s-controller_button-active {
+.controllerButton--active {
     background-color: #FFF;
     color: #000;
     border: 0.185rem solid #000;
     outline: 0.125rem solid #FFF;
 }
 
-.s-controller_line {
+.controllerLine {
     background-color: #FFF;
     width: 50%;
     height: 2px;
     position: absolute;
 }
 
-.s-card--hovered .s-card_background {
+.card--hovered .cardBackground {
     opacity: 0;
     cursor: pointer;
 }
 
-.s-card--hovered .s-card_image {
+.card--hovered .cardImage {
     transform: scale(1.4);
     filter: drop-shadow(30px 10px 4px rgba(0, 0, 0, .5));
 }
 
-body#spider-man-01-hovered::before {
+body#JTBoston-hovered::before {
     background-image: url(/assets/images/bostonstadium.png);
 }
 
-body#spider-man-02-hovered::before {
+body#JTDuke-hovered::before {
     background-image: url(/assets/images/dukestadium2.png);
 }
 
-body#spider-man-03-hovered::before {
+body#JTUSA-hovered::before {
     background-image: url(/assets/images/usastadium.png);
 }
 
-body[id^='spider-man-']::before {
-    opacity: 1;
-}
-
-body[id^='spider-man-'] .s-card:not(.s-card--hovered) {
-    filter: grayscale(100%);
-}
-
-.s-card--hovered .s-card_title {
-    bottom: 50%;
-}
-
-.s-cards-carousel {
+.cardsCarousel {
     display: flex;
     justify-content: center;
     width: calc(100vw / 3 - 10%);

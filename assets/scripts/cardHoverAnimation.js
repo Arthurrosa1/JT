@@ -1,15 +1,15 @@
 function handleMouseEnter() {
-    this.classList.add('s-card--hovered');
+    this.classList.add('card--hovered');
     document.body.id = `${this.id}-hovered`;
 }
 
 function handleMouseLeave(){
-    this.classList.remove('s-card--hovered');
+    this.classList.remove('card--hovered');
     document.body.id = '';
 }
 
 function addEventListenersToCards() {
-    const cardsElements = document.querySelectorAll('.s-card');
+    const cardsElements = document.querySelectorAll('.card');
 
     for(let index = 0; index < cardsElements.length; index++) {
         const card = cardsElements[index];
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", addEventListenersToCards, false);
 
 function selectCarouselItem(selectedButtonElement) {
   const selectedItem = selectedButtonElement.id;
-  const carousel = document.querySelector('.s-cards-carousel');
+  const carousel = document.querySelector('.cardsCarousel');
   const transform = carousel.style.transform;
   const rotateY = transform.match(/rotateY\((-?\d+deg)\)/i);
   const rotateYDeg = -120 * (Number(selectedItem) - 1);
@@ -31,7 +31,7 @@ function selectCarouselItem(selectedButtonElement) {
 
   carousel.style.transform = newTransform;
 
-  const activeButtonElement = document.querySelector('.s-controller_button-active');
-  activeButtonElement.classList.remove('s-controller_button-active');
-  selectedButtonElement.classList.add('s-controller_button-active');
+  const activeButtonElement = document.querySelector('.controllerButton--active');
+  activeButtonElement.classList.remove('controllerButton--active');
+  selectedButtonElement.classList.add('controllerButton--active');
 }
