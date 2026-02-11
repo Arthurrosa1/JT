@@ -2,63 +2,51 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/homePage.css">
-    <link rel="shortcut icon" href="assets/images/icon1.png" type="image/x-icon">
-    <script src="assets/scripts/cardHoverAnimation.js"></script>
-    <title>Jayson Tatum</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/homePage.css">
+  <link rel="shortcut icon" href="assets/images/icon1.png" type="image/x-icon">
+  <script defer src="assets/scripts/cardHoverAnimation.js"></script>
+  <script defer src="assets/scripts/themeToggle.js"></script>
+  <title>Jayson Tatum</title>
 </head>
 
 <body>
-    <nav class="menu">
-        <ul>
-            <li class="menuItem">
-                <a href="index.html">HOME PAGE</a>
-            </li>
-            <li class="menuItem">
-                <a href="/pages/tobeyMaguire/spiderman1.html">BOSTON CELTICS</a>
-            </li>
-            <li class="menuItem menuItemIcon">
-                <img src="assets/images/jt.png" alt="Jayson Tatum Icon">
-            </li>
-            <li class="menuItem">
-                <a href="/pages/duke/duke.html">DUKE UNIVERSITY</a>
-            </li>
-            <li class="menuItem">
-                <a href="/pages/andrewGarfield/usa1.html">USA TEAM</a>
-            </li>
-        </ul>
-    </nav>
-    <div class="container">
-        <div class="cardsCarousel" style="transform: translateZ(-40vw) rotateY(0deg);">
-            <a href="/pages/boston/boston1.html" class="card" id="JTBoston">
-                <img class="cardBackground" src="assets/images/bostonstadium.png" alt="JT Homepage">
-                <img class="cardImage" src="assets/images/bostonpage.png" alt="JT Boston">
-            </a>
-            <a href="/pages/duke/duke.html" class="card" id="JTDuke">
-                <img class="cardBackground" src="assets/images/dukestadium2.png" alt="JT Homepage">
-                <img class="cardImage" src="assets/images/dukepage.png" alt="JT Duke">
-            </a>
-            <a href="/pages/usa/usa1.html" class="card" id="JTUSA">
-                <img class="cardBackground" src="assets/images/usastadium.png" alt="JT Homepage">
-                <img class="cardImage" src="assets/images/usapage.png" alt="JT USA">
-            </a>
-        </div>
-    </div>
+  <nav class="menu">
+    <ul>
+      <li class="menuItem"><a href="index.html">HOME PAGE</a></li>
+      <li class="menuItem"><a href="pages/boston/boston1.html">BOSTON CELTICS</a></li>
+      <li class="menuItem menuItemIcon"><img src="assets/images/jt.png" alt="Jayson Tatum Icon"></li>
+      <li class="menuItem"><a href="pages/duke/duke.html">DUKE UNIVERSITY</a></li>
+      <li class="menuItem"><a href="pages/usa/usa1.html">USA TEAM</a></li>
+    </ul>
 
-    <div class="controller">
-        <div id="1" onclick="selectCarouselItem(this)" class="controllerButton controllerButton--active">
-            01
-        </div>
-        <div id="2" onclick="selectCarouselItem(this)" class="controllerButton">
-            02
-        </div>
-        <div id="3" onclick="selectCarouselItem(this)" class="controllerButton">
-            03
-        </div>
-        <div class="controllerLine"></div>
+    <button id="themeToggle" class="themeButton">🌙</button>
+  </nav>
+
+  <main class="container">
+    <div class="cardsCarousel" style="transform: translateZ(-40vw) rotateY(0deg);">
+      <a href="pages/boston/boston1.html" class="card" id="JTBoston">
+        <img class="cardBackground" src="assets/images/bostonstadium.png" alt="Boston Stadium" loading="lazy">
+        <img class="cardImage" src="assets/images/bostonpage.png" alt="Jayson Tatum - Boston" loading="lazy">
+      </a>
+      <a href="pages/duke/duke.html" class="card" id="JTDuke">
+        <img class="cardBackground" src="assets/images/dukestadium2.png" alt="Duke Stadium" loading="lazy">
+        <img class="cardImage" src="assets/images/dukepage.png" alt="Jayson Tatum - Duke" loading="lazy">
+      </a>
+      <a href="pages/usa/usa1.html" class="card" id="JTUSA">
+        <img class="cardBackground" src="assets/images/usastadium.png" alt="USA Stadium" loading="lazy">
+        <img class="cardImage" src="assets/images/usapage.png" alt="Jayson Tatum - USA" loading="lazy">
+      </a>
     </div>
+  </main>
+
+  <div class="controller">
+    <div id="1" onclick="selectCarouselItem(this)" class="controllerButton controllerButton--active">01</div>
+    <div id="2" onclick="selectCarouselItem(this)" class="controllerButton">02</div>
+    <div id="3" onclick="selectCarouselItem(this)" class="controllerButton">03</div>
+    <div class="controllerLine"></div>
+  </div>
 </body>
 
 </html>

@@ -1,8 +1,32 @@
 @import url(/assets/css/global.css);
 @import url(/assets/css/reset.css);
 
+:root {
+    --bg-color: #000;
+    --text-color: #fff;
+    --card-border: #fff;
+    --controller-bg: #000;
+    --controller-text: #fff;
+    --controller-active-bg: #fff;
+    --controller-active-text: #000;
+}
+
+[data-theme="light"] {
+    --bg-color: #f0f0f0;
+    --text-color: #111;
+    --card-border: #111;
+    --controller-bg: #fff;
+    --controller-text: #111;
+    --controller-active-bg: #111;
+    --controller-active-text: #fff;
+}
+
 body {
-    background-color: #000000;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.5s, color 0.5s;
+    overflow-x: hidden;
 }
 
 body::before {
@@ -16,6 +40,7 @@ body::before {
     position: absolute;
     opacity: 0.15;
     transition: background-image 1s ease-in-out, opacity 1s ease-in-out;
+    z-index: -1;
 }
 
 .menu {
@@ -27,12 +52,26 @@ body::before {
     justify-content: center;
     align-items: center;
     margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+    position: relative;
 }
 
 .menuItem {
     display: inline-block;
     text-transform: uppercase;
     margin: 0 1rem;
+}
+
+.menuItem a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.menuItem a:hover {
+    color: #00bfff;
 }
 
 .menuItemIcon {
@@ -47,6 +86,26 @@ body::before {
     padding: 0.3rem 0;
 }
 
+.themeButton {
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+    background: none;
+    border: 2px solid var(--text-color);
+    border-radius: 50%;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 2.5rem;
+    height: 2.5rem;
+    transition: all 0.3s;
+}
+
+.themeButton:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
+
 .container {
     position: relative;
     display: flex;
@@ -56,13 +115,20 @@ body::before {
 }
 
 .card {
-    border: 0.2rem solid #ffffff;
-    width: 100%;
+    border: 0.2rem solid var(--card-border);
+    width: 80vw;
+    max-width: 500px;
     height: 70vh;
     position: absolute;
     transition: filter 0.5s ease-in-out;
     border-radius: 10px;
 }
+
+.card:active {
+    transform: scale(0.97) rotateY(var(--angle));
+}
+
+
 
 .card:nth-child(1) {
     transform: rotateY(0deg) translateZ(50vw);
@@ -84,6 +150,7 @@ body::before {
     opacity: 0.7;
     transition: opacity 1s ease-in-out;
     border-radius: 10px;
+    transition: opacity 1s ease-in-out;
 }
 
 .cardImage {
@@ -91,7 +158,15 @@ body::before {
     height: 100%;
     object-fit: contain;
     position: relative;
-    transition: 1s ease-in-out;
+    transition: transform 1s ease-in-out;
+}
+
+.card--hovered .cardBackground {
+    opacity: 0;
+}
+
+.card--hovered .cardImage {
+    transform: scale(1.2);
 }
 
 .controller {
@@ -110,9 +185,10 @@ body::before {
     justify-content: center;
     width: 2.5rem;
     height: 2.5rem;
-    border: 2px solid #FFF;
+    border: 2px solid var(--controller-text);
     border-radius: 50%;
-    background-color: rgb(0, 0, 0);
+    background-color: var(--controller-bg);
+    color: var(--controller-text);
     text-align: center;
     font-size: 1rem;
     font-weight: bold;
@@ -130,16 +206,16 @@ body::before {
 }
 
 .controllerButton--active {
-    background-color: #FFF;
-    color: #000;
+    background-color: var(--controller-active-bg);
+    color: var(--controller-active-text);
     border: 0.185rem solid #000;
     outline: 0.125rem solid #FFF;
 }
 
 .controllerLine {
-    background-color: #FFF;
-    width: 50%;
-    height: 2px;
+    background-color: var(--controller-text);
+    width: 25%;
+    height: 1px;
     position: absolute;
 }
 
