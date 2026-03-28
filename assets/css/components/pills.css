@@ -4,7 +4,6 @@
 }
 
 .pills ul li{
-  background-color: var(--primary-color);
   color: white;
   padding: 5px 15px;
   margin: 0 10px;
@@ -14,6 +13,10 @@
 
 .duke-pills ul li{
   background-color: #2a2acc;
+}
+
+.usa-pills ul li{
+  background-color: #ff0000;
 }
 
 .pills ul li:first-child{

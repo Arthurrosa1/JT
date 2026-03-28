@@ -1,23 +1,23 @@
-.gallery {
+.galleryDuke {
   padding: 20px;
   padding-left: 0;
 }
 
-.gallery ul{
+.galleryDuke ul{
   display: flex;
   flex-direction: row;
 }
 
-.gallery ul li{
+.galleryDuke ul li{
   margin-left: 25px;
 }
 
-.gallery ul li:first-child{
+.galleryDuke ul li:first-child{
   margin-left: 0px;
 }
 
-.gallery ul li a img{
-  border:solid 6px white;
+.galleryDuke ul li a img{
+  border:solid 2px #2a2acc;
   border-radius: 15px;
   width: 20vw;
 height: auto;
