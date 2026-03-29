@@ -1,3 +1,28 @@
+.galleryBoston {
+  padding: 20px;
+  padding-left: 0;
+}
+
+.galleryBoston ul{
+  display: flex;
+  flex-direction: row;
+}
+
+.galleryBoston ul li{
+  margin-left: 25px;
+}
+
+.galleryBoston ul li:first-child{
+  margin-left: 0px;
+}
+
+.galleryBoston ul li a img{
+  border:solid 2px #2a2acc;
+  border-radius: 15px;
+  width: 20vw;
+height: auto;
+}
+
 .galleryDuke {
   padding: 20px;
   padding-left: 0;
@@ -20,5 +45,31 @@
   border:solid 2px #2a2acc;
   border-radius: 15px;
   width: 20vw;
+height: auto;
+}
+
+.galleryUSA {
+  padding: 20px;
+  padding-left: 0;
+}
+
+.galleryUSA ul{
+  display: flex;
+  flex-direction: row;
+}
+
+.galleryUSA ul li{
+  margin-left: 25px;
+}
+
+.galleryUSA ul li:first-child{
+  margin-left: 0px;
+}
+
+.galleryUSA ul li a img{
+  border:solid 2px #2a2acc;
+  border-radius: 15px;
+  max-width: 20vw;
+  max-height: 20vh;
 height: auto;
 }
