@@ -6,18 +6,18 @@
 @import url(/assets/css/components/gallery.css);
 
 
-.s-wrapper {
+.wrapper {
     display: flex;
     height: 100vh;
     flex-flow: row nowrap;
 }
 
-.s-wrapper video {
+.wrapper video {
   position: fixed;
   width: 100%;
 }
 
-.s-wrapper .s-left-column {
+.wrapper .leftColumn {
     width: 100px;
     height: 100%;
     display:flex;
@@ -30,7 +30,7 @@
     z-index: 1;
 }
 
-.s-wrapper .s-main-content {
+.wrapper .mainContent {
     height: 100%;
     width: 100%;
     padding-left: 130px;
@@ -38,56 +38,56 @@
     
 }
 
-.s-wrapper .s-main-content__top {
-  height: 80vh;
+.wrapper .mainContentTop {
+  height: 67vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
-.s-wrapper .s-main-content_bottom{
+.wrapper .mainContentBottom{
   height: 20vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
 
-.s-wrapper .s-main-content .s-logo img {
+.wrapper .mainContent .logo img {
     margin-top: 50px;
     margin-left: 0;
     margin-bottom:30px;
     width: 20%;
 }
 
-.s-wrapper .s-main-content .s-logo img {
+.wrapper .mainContent .s-logo img {
     margin-top: 50px;
     margin-left: 0;
     margin-bottom:30px;
     width: 20%;
 }
 
-.s-wrapper .s-main-content_top .s-description{
+.wrapper .mainContentTop .s-description{
   background-color: rgba(0,0,0,.7);
   max-width: 50%;
   padding: 20px;
   border-radius: 10px;
 }
 
-.s-wrapper .s-main-content_top .s-description .s-description_text p{
+.wrapper .mainContentTop .s-description .s-description_text p{
   color: white;
   line-height: 170%;
 }
 
-.s-wrapper .s-main-content_top .s-description .pills{
+.wrapper .mainContent .s-description .pills{
   margin-bottom: 20px;
 }
 
-.s-wrapper .s-main-content .s-links {
+.wrapper .mainContent .links {
   padding: 20px;
   padding-left: 0;
 }
 
-.s-wrapper .s-main-content .s-links ul{
+.wrapper .mainContentTop .links ul{
   display: flex;
   flex-direction: row;
 }
@@ -105,7 +105,7 @@
   margin: 50px 0 30px 0;
 }
 
-.logo.usa img{
+.logoUsa img{
   width: 22%;
   height: auto;
   margin: -35px 0 -45px -85px;

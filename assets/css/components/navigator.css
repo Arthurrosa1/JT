@@ -51,12 +51,12 @@
     background-color: #FFF;
 }
 
-.navigator .navigator_icon {
+.navigator .navigatorIcon {
     position: absolute;
     top: -20px;
 }
 
-.navigator .navigator_icon img {
+.navigator .navigatorIcon img {
     display: flex;
     align-items: center;
     justify-content: center;
