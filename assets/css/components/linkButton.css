@@ -1,4 +1,4 @@
-a.link-button{
+a.linkButton{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6,7 +6,7 @@ a.link-button{
   margin-bottom: 100px;
 }
 
-a.link-button .icon{
+a.linkButton .icon{
   width: 32px;
   height: 32px;
   padding: 4px;
@@ -20,7 +20,7 @@ a.link-button .icon{
   justify-content: center;
 }
 
-a.link-button .icon .play-icon{
+a.linkButton .icon .play-icon{
   border:solid 7px white;
   width:0;
   height: 0;
@@ -30,6 +30,6 @@ a.link-button .icon .play-icon{
   margin-right: -7px;
 }
 
-a.link-button .label{
+a.linkButton .label{
   margin-left: 10px;
 }

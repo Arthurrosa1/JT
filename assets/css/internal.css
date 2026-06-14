@@ -66,19 +66,19 @@
     width: 20%;
 }
 
-.wrapper .mainContentTop .s-description{
+.wrapper .mainContentTop .description{
   background-color: rgba(0,0,0,.7);
   max-width: 50%;
   padding: 20px;
   border-radius: 10px;
 }
 
-.wrapper .mainContentTop .s-description .s-description_text p{
+.wrapper .mainContentTop .description .descriptionText p{
   color: white;
   line-height: 170%;
 }
 
-.wrapper .mainContent .s-description .pills{
+.wrapper .mainContent .description .pills{
   margin-bottom: 20px;
 }
 
@@ -111,6 +111,12 @@
   margin: -35px 0 -45px -85px;
 }
 
+.logoBoston img{
+  width: 18%;
+  height: auto;
+  margin: -150px 0 -155px -35px;
+}
+
 .duke-01 {
 background-image: url(https://platform.sbnation.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/7962225/tat.0.gif?quality=90&strip=all&crop=0,0,100,100);
 background-size: cover;
@@ -123,6 +129,11 @@ background-size: cover;
 
 .usa-02 {
 background-image: url(https://media1.tenor.com/m/FcpVZOX8MgAAAAAd/crossover-jason-tatum.gif);
+background-size: cover;
+}
+
+.boston-01 {
+background-image: url(https://media1.tenor.com/m/iydtQDfkAcYAAAAd/jason-tatum-lebron-james.gif);
 background-size: cover;
 }
 
