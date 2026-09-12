@@ -59,7 +59,7 @@
     width: 20%;
 }
 
-.wrapper .mainContent .s-logo img {
+.wrapper .mainContent .logo img {
     margin-top: 50px;
     margin-left: 0;
     margin-bottom:30px;
@@ -117,22 +117,22 @@
   margin: -150px 0 -155px -35px;
 }
 
-.duke-01 {
+.Duke01 {
 background-image: url(https://platform.sbnation.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/7962225/tat.0.gif?quality=90&strip=all&crop=0,0,100,100);
 background-size: cover;
 }
 
-.usa-01 {
+.Usa01 {
 background-image: url(https://media1.tenor.com/m/ZDGiQLg1s0IAAAAd/one-dribble-pull-up-jason-tatum.gif);
 background-size: cover;
 }
 
-.usa-02 {
+.Usa02 {
 background-image: url(https://media1.tenor.com/m/FcpVZOX8MgAAAAAd/crossover-jason-tatum.gif);
 background-size: cover;
 }
 
-.boston-01 {
+.Boston01 {
 background-image: url(https://media1.tenor.com/m/iydtQDfkAcYAAAAd/jason-tatum-lebron-james.gif);
 background-size: cover;
 }

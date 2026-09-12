@@ -20,7 +20,7 @@ a.linkButton .icon{
   justify-content: center;
 }
 
-a.linkButton .icon .play-icon{
+a.linkButton .icon .PlayIcon{
   border:solid 7px white;
   width:0;
   height: 0;

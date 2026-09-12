@@ -1,10 +1,10 @@
 function handleMouseEnter() {
-    this.classList.add('card--hovered');
+    this.classList.add('CardHovered');
     document.body.id = `${this.id}-hovered`;
 }
 
 function handleMouseLeave(){
-    this.classList.remove('card--hovered');
+    this.classList.remove('CardHovered');
     document.body.id = '';
 }
 
@@ -29,7 +29,7 @@ function selectCarouselItem(selectedButtonElement) {
 
   carousel.style.transform = newTransform;
 
-  const activeButtonElement = document.querySelector('.controllerButton--active');
-  activeButtonElement.classList.remove('controllerButton--active');
-  selectedButtonElement.classList.add('controllerButton--active');
+  const activeButtonElement = document.querySelector('.ControllerButtonActive');
+  activeButtonElement.classList.remove('ControllerButtonActive');
+  selectedButtonElement.classList.add('ControllerButtonActive');
 }
