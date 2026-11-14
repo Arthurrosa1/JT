@@ -1,18 +1,30 @@
-a.linkButton{
-  display: flex;
+a.linkButton {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--text);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(6px);
+  padding: 6px 18px 6px 6px;
+  border-radius: 999px;
   margin-bottom: 100px;
+  transition: transform 0.2s ease, var(--theme-transition);
 }
 
-a.linkButton .icon{
+a.linkButton:hover,
+a.linkButton:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--team);
+}
+
+a.linkButton .icon {
   width: 32px;
   height: 32px;
   padding: 4px;
-  background-color: transparent;
-  border: solid 2px white;
-  background-clip: content-box;
+  box-sizing: border-box;
+  background-color: var(--team);
   border-radius: 50%;
   position: relative;
   display: flex;
@@ -20,16 +32,16 @@ a.linkButton .icon{
   justify-content: center;
 }
 
-a.linkButton .icon .PlayIcon{
-  border:solid 7px white;
-  width:0;
+/* Triângulo de "play" desenhado com bordas */
+a.linkButton .icon .PlayIcon {
+  border: solid 7px transparent;
+  border-left-color: var(--team-contrast);
+  width: 0;
   height: 0;
-  border-top-color: transparent;
-  border-right-color: transparent;
-  border-bottom-color: transparent;
   margin-right: -7px;
 }
 
-a.linkButton .label{
+a.linkButton .label {
   margin-left: 10px;
+  font-weight: 600;
 }

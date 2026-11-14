@@ -1,74 +1,36 @@
-.galleryBoston {
+/* Galeria das páginas internas. A borda usa a cor do time. */
+.gallery {
   padding: 20px;
   padding-left: 0;
 }
 
-.galleryBoston ul {
+.gallery ul {
   display: flex;
   flex-direction: row;
+  gap: 25px;
 }
 
-.galleryBoston ul li {
-  margin-left: 25px;
+.gallery ul li a {
+  display: block;
 }
 
-.galleryBoston ul li:first-child {
-  margin-left: 0px;
-}
-
-.galleryBoston ul li a img {
-  border: solid 2px #2a2acc;
+.gallery ul li a img {
+  display: block;
+  border: solid 2px var(--team);
   border-radius: 15px;
   width: 20vw;
   height: auto;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease;
 }
 
-.galleryDuke {
-  padding: 20px;
-  padding-left: 0;
+.gallery ul li a:hover img,
+.gallery ul li a:focus-visible img {
+  transform: translateY(-4px);
 }
 
-.galleryDuke ul {
-  display: flex;
-  flex-direction: row;
-}
-
-.galleryDuke ul li {
-  margin-left: 25px;
-}
-
-.galleryDuke ul li:first-child {
-  margin-left: 0px;
-}
-
-.galleryDuke ul li a img {
-  border: solid 2px #2a2acc;
-  border-radius: 15px;
-  width: 20vw;
-  height: auto;
-}
-
-.galleryUSA {
-  padding: 20px;
-  padding-left: 0;
-}
-
-.galleryUSA ul {
-  display: flex;
-  flex-direction: row;
-}
-
-.galleryUSA ul li {
-  margin-left: 25px;
-}
-
-.galleryUSA ul li:first-child {
-  margin-left: 0px;
-}
-
+/* Fotos da seleção têm proporções diferentes: altura fixa com recorte */
 .galleryUSA ul li a img {
-  border: solid 2px #ff0000;
-  border-radius: 15px;
-  width: 20vw;
   height: 11vw;
+  object-fit: cover;
 }

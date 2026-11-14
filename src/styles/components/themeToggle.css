@@ -1,0 +1,43 @@
+.themeButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 2px solid var(--text);
+    border-radius: 50%;
+    background-color: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(6px);
+    transition: transform 0.2s ease, var(--theme-transition);
+}
+
+.themeButton svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    transition: transform 0.4s ease;
+}
+
+.themeButton:hover {
+    background-color: var(--text);
+    color: var(--bg);
+}
+
+.themeButton:hover svg {
+    transform: rotate(20deg);
+}
+
+.themeButton:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--bg), 0 0 0 5px var(--accent);
+}
+
+/* Versão flutuante, usada nas páginas internas */
+.themeButtonFloating {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+}

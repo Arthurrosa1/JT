@@ -15,7 +15,7 @@ export default function Gallery({ className, images }) {
   }, [images]);
 
   return (
-    <div className={className} ref={containerRef}>
+    <div className={className ? `gallery ${className}` : 'gallery'} ref={containerRef}>
       <ul>
         {images.map((image) => (
           <li key={image.full}>

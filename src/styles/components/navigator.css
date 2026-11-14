@@ -7,6 +7,11 @@
     position: relative;
 }
 
+.navigator ul {
+    position: relative;
+    z-index: 1;
+}
+
 .navigator ul li {
     margin: 35px 0;
 }
@@ -19,48 +24,55 @@
     margin-bottom: 60px;
 }
 
-.navigator ul li a{
-  color: white;
-  border: solid 2px white;
-  width:45px;
-  height:45px;
-  border-radius: 50%;
-  background-color: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.navigator ul li a {
+    color: var(--text);
+    border: solid 2px var(--text);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--surface-solid);
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, var(--theme-transition);
 }
 
+/* Linha vertical que liga os botões */
 .navigator::before {
     content: '';
     position: absolute;
     top: 0;
     width: 2px;
     height: 100%;
-    background-color: #FFF;
+    background-color: var(--text);
+    opacity: 0.7;
     z-index: 0;
 }
 
-.navigator ul {
-    z-index: 1;
+/* Hover e temporada atual: preenchidos com a cor do time */
+.navigator ul li a:hover,
+.navigator ul li a:focus-visible,
+.navigator ul li a.active {
+    color: var(--team-contrast);
+    background-color: var(--team);
+    border-color: var(--team);
 }
 
-.navigator  ul li a:hover,
-.navigator  ul li a.active {
-    color:green;
-    background-color: #FFF;
+.navigator ul li a:hover {
+    transform: scale(1.08);
 }
 
-.navigator ul.usaActive li a:hover,
-.navigator ul.usaActive li a.active {
-    color:red;
-    background-color: #FFF;
+/* Anel em volta da temporada atual (box-shadow acompanha o círculo em qualquer navegador) */
+.navigator ul li a.active {
+    box-shadow: 0 0 0 3px var(--bg), 0 0 0 5px var(--team), var(--shadow);
 }
 
 .navigator .navigatorIcon,
 .navigatorIconUSA {
     position: absolute;
     top: -20px;
+    z-index: 1;
 }
 
 .navigator .navigatorIcon img,
@@ -72,15 +84,10 @@
     height: 60px;
     border-radius: 50%;
     background-color: red;
-    border: solid 2px white;
+    border: solid 2px var(--text);
+    box-shadow: var(--shadow);
 }
 
 .navigator .navigatorIconUSA img {
     background-color: green;
-}
-
-
-/* Temporada atual: borda na cor do time para não sumir sobre o fundo branco */
-.navigator ul li a.active {
-    border-color: currentColor;
 }

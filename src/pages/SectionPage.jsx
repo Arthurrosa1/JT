@@ -3,6 +3,7 @@ import { Navigate, useParams } from 'react-router-dom';
 import Backdrop from '../components/Backdrop.jsx';
 import Navigator from '../components/Navigator.jsx';
 import Pills from '../components/Pills.jsx';
+import ThemeToggle from '../components/ThemeToggle.jsx';
 import LinkButton from '../components/LinkButton.jsx';
 import Gallery from '../components/Gallery.jsx';
 import sections from '../data/sections.js';
@@ -18,7 +19,9 @@ export default function SectionPage() {
   if (!seasonData) return <Navigate to="/" replace />;
 
   return (
-    <div className="wrapper">
+    <div className={`wrapper team-${sectionId}`}>
+      <ThemeToggle floating />
+
       <div className="leftColumn">
         <Navigator sectionId={sectionId} section={section} />
       </div>

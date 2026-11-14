@@ -25,7 +25,7 @@ const sections = {
     navListClassName: '',
     logo: { className: 'logoBoston', src: img('bostonname1.png'), alt: 'Boston Celtics', title: 'Boston' },
     pillsClassName: 'BostonPills',
-    galleryClassName: 'gallery',
+    galleryClassName: 'galleryBoston',
     highlightsUrl: 'https://www.youtube.com/watch?v=uJD7gcpc4lg',
     gallery: [1, 2, 3].map((n) => ({
       full: `/assets/images/spiderman-tobey/movie-01/gallery/image-0${n}-full.jpg`,

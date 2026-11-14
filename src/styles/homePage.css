@@ -1,31 +1,10 @@
-:root {
-    --bg-color: #000;
-    --text-color: #fff;
-    --card-border: #fff;
-    --controller-bg: #000;
-    --controller-text: #fff;
-    --controller-active-bg: #fff;
-    --controller-active-text: #000;
-}
-
-[data-theme="light"] {
-    --bg-color: #f0f0f0;
-    --text-color: #111;
-    --card-border: #111;
-    --controller-bg: #fff;
-    --controller-text: #111;
-    --controller-active-bg: #111;
-    --controller-active-text: #fff;
-}
+/* Cores vêm de global.css (variáveis de tema). */
 
 body.homeBody {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: 'Poppins', sans-serif;
-    transition: background-color 0.5s, color 0.5s;
     overflow-x: hidden;
 }
 
+/* Estádio do card em hover (aparece por trás de tudo) */
 body.homeBody::before {
     content: "";
     background-image: none;
@@ -40,6 +19,54 @@ body.homeBody::before {
     z-index: -1;
 }
 
+body.homeBody[data-hovered]::before {
+    opacity: var(--home-stadium-opacity);
+}
+
+body.homeBody[data-hovered="JTBoston"]::before {
+    background-image: url(/assets/images/bostonstadium.png);
+}
+
+body.homeBody[data-hovered="JTDuke"]::before {
+    background-image: url(/assets/images/dukestadium2.png);
+}
+
+body.homeBody[data-hovered="JTUSA"]::before {
+    background-image: url(/assets/images/usastadium.png);
+}
+
+/* Fundo animado da home (componente Backdrop). Some ao passar o mouse num card,
+   revelando o estádio em body::before. */
+.homeBackdrop.backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    opacity: var(--home-backdrop-opacity);
+    transition: opacity 1s ease-in-out;
+}
+
+/* O vídeo da home tem só 371x208 e é ampliado para a tela inteira. Um desfoque
+   leve (efeito "fora de foco") esconde os blocos de compressão; o scale evita
+   bordas transparentes causadas pelo blur. Ao trocar por um vídeo em alta
+   resolução, estas duas linhas podem ser removidas. */
+.homeBackdrop .backdropMedia {
+    filter: blur(4px) saturate(1.15);
+    transform: scale(1.08);
+}
+
+.homeBackdrop.backdrop::after {
+    display: none; /* sem película na home: a opacidade já suaviza o vídeo */
+}
+
+body.homeBody[data-hovered] .homeBackdrop.backdrop {
+    opacity: 0;
+}
+
+/* ----- Menu ----- */
+
 .menu {
     padding: 1rem 0;
     width: 100%;
@@ -51,7 +78,6 @@ body.homeBody::before {
     margin-bottom: 2rem;
     flex-wrap: wrap;
     gap: 1rem;
-    position: relative;
 }
 
 .menuItem {
@@ -61,14 +87,15 @@ body.homeBody::before {
 }
 
 .menuItem a {
-    color: var(--text-color);
+    color: var(--text);
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s;
 }
 
-.menuItem a:hover {
-    color: #00bfff;
+.menuItem a:hover,
+.menuItem a:focus-visible {
+    color: var(--accent);
 }
 
 .menuItemIcon {
@@ -83,25 +110,13 @@ body.homeBody::before {
     padding: 0.3rem 0;
 }
 
-.themeButton {
+.menu .themeButton {
     position: absolute;
     right: 1rem;
     top: 0.5rem;
-    background: none;
-    border: 2px solid var(--text-color);
-    border-radius: 50%;
-    color: var(--text-color);
-    font-size: 1.2rem;
-    cursor: pointer;
-    width: 2.5rem;
-    height: 2.5rem;
-    transition: all 0.3s;
 }
 
-.themeButton:hover {
-    background-color: var(--text-color);
-    color: var(--bg-color);
-}
+/* ----- Carrossel ----- */
 
 .container {
     position: relative;
@@ -111,21 +126,28 @@ body.homeBody::before {
     perspective: 3000px;
 }
 
+.cardsCarousel {
+    display: flex;
+    justify-content: center;
+    width: calc(100vw / 3 - 10%);
+    transform-style: preserve-3d;
+    transition: transform 0.4s ease-in;
+}
+
 .card {
-    border: 0.2rem solid var(--card-border);
+    border: 0.2rem solid var(--text);
     width: 80vw;
     max-width: 500px;
     height: 70vh;
     position: absolute;
-    transition: filter 0.5s ease-in-out;
     border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: filter 0.5s ease-in-out, border-color 0.4s ease;
 }
 
 .card:active {
     transform: scale(0.97) rotateY(var(--angle));
 }
-
-
 
 .card:nth-child(1) {
     transform: rotateY(0deg) translateZ(50vw);
@@ -145,7 +167,6 @@ body.homeBody::before {
     position: absolute;
     object-fit: cover;
     opacity: 0.7;
-    transition: opacity 1s ease-in-out;
     border-radius: 10px;
     transition: opacity 1s ease-in-out;
 }
@@ -160,11 +181,15 @@ body.homeBody::before {
 
 .CardHovered .cardBackground {
     opacity: 0;
+    cursor: pointer;
 }
 
 .CardHovered .cardImage {
-    transform: scale(1.2);
+    transform: scale(1.4);
+    filter: drop-shadow(30px 10px 4px rgba(0, 0, 0, .5));
 }
+
+/* ----- Controle do carrossel (01 / 02 / 03) ----- */
 
 .controller {
     position: absolute;
@@ -182,16 +207,16 @@ body.homeBody::before {
     justify-content: center;
     width: 2.5rem;
     height: 2.5rem;
-    border: 2px solid var(--controller-text);
+    border: 2px solid var(--text);
     border-radius: 50%;
-    background-color: var(--controller-bg);
-    color: var(--controller-text);
+    background-color: var(--bg);
+    color: var(--text);
     text-align: center;
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
     z-index: 1;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, var(--theme-transition);
 }
 
 .controllerButton:hover {
@@ -203,65 +228,15 @@ body.homeBody::before {
 }
 
 .ControllerButtonActive {
-    background-color: var(--controller-active-bg);
-    color: var(--controller-active-text);
-    border: 0.185rem solid #000;
-    outline: 0.125rem solid #FFF;
+    background-color: var(--text);
+    color: var(--bg);
+    box-shadow: 0 0 0 3px var(--bg), 0 0 0 5px var(--text);
 }
 
 .controllerLine {
-    background-color: var(--controller-text);
+    background-color: var(--text);
+    opacity: 0.6;
     width: 25%;
     height: 1px;
     position: absolute;
-}
-
-.CardHovered .cardBackground {
-    opacity: 0;
-    cursor: pointer;
-}
-
-.CardHovered .cardImage {
-    transform: scale(1.4);
-    filter: drop-shadow(30px 10px 4px rgba(0, 0, 0, .5));
-}
-
-body.homeBody[data-hovered="JTBoston"]::before {
-    background-image: url(/assets/images/bostonstadium.png);
-}
-
-body.homeBody[data-hovered="JTDuke"]::before {
-    background-image: url(/assets/images/dukestadium2.png);
-}
-
-body.homeBody[data-hovered="JTUSA"]::before {
-    background-image: url(/assets/images/usastadium.png);
-}
-
-.cardsCarousel {
-    display: flex;
-    justify-content: center;
-    width: calc(100vw / 3 - 10%);
-    transform-style: preserve-3d;
-    transition: transform 0.4s ease-in;
-}
-body.homeBody[data-hovered]::before {
-    opacity: 0.15;
-}
-
-/* Fundo animado da home (componente Backdrop). Some ao passar o mouse num card,
-   revelando o estádio em body::before. */
-.homeBackdrop.backdrop {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: -1;
-    opacity: 0.15;
-    transition: opacity 1s ease-in-out;
-}
-
-body.homeBody[data-hovered] .homeBackdrop.backdrop {
-    opacity: 0;
 }
