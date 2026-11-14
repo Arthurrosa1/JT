@@ -14,10 +14,6 @@ Feito com **React** e **Vite**.
 - [Scripts](#scripts)
 - [Estrutura do projeto](#estrutura-do-projeto)
 - [Rotas](#rotas)
-- [Como editar o conteúdo](#como-editar-o-conteúdo)
-- [Fundos animados](#fundos-animados)
-- [Deploy](#deploy)
-- [Problemas conhecidos](#problemas-conhecidos)
 - [Créditos](#créditos)
 
 ---
