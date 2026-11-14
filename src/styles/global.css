@@ -1,8 +1,59 @@
+/* ==========================================================================
+   Tema — todas as cores do site vêm destas variáveis.
+   O atributo data-theme ("dark" | "light") é definido no <html> por um script
+   no index.html (antes do React, para não "piscar") e depois pelo useTheme.
+   ========================================================================== */
 
-:root {
-  --primary-color: #B9001F;
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #0b0c0f;                         /* fundo da página */
+  --surface: rgba(12, 14, 18, 0.74);      /* cartões sobre o vídeo */
+  --surface-solid: #16181d;               /* botões e elementos opacos */
+  --border: rgba(255, 255, 255, 0.14);
+  --text: #f4f5f7;
+  --text-muted: #c3c7cf;
+  --accent: #38bdf8;                      /* hover de links */
+  --shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+
+  /* película sobre os vídeos de fundo, para o texto ficar legível */
+  --scrim: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.25) 55%, rgba(0, 0, 0, 0.05) 100%);
+  --home-backdrop-opacity: 0.18;
+  --home-stadium-opacity: 0.2;
 }
+
+[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: #f3f4f6;
+  --surface: rgba(255, 255, 255, 0.86);
+  --surface-solid: #ffffff;
+  --border: rgba(17, 24, 39, 0.12);
+  --text: #15171c;
+  --text-muted: #4b5160;
+  --accent: #0369a1;
+  --shadow: 0 12px 32px rgba(17, 24, 39, 0.18);
+
+  --scrim: linear-gradient(90deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.2) 55%, rgba(255, 255, 255, 0) 100%);
+  --home-backdrop-opacity: 0.25;
+  --home-stadium-opacity: 0.3;
+}
+
+/* Cor de cada time (pílulas, navegação, galeria) */
+:root {
+  --team: var(--accent);
+  --team-contrast: #ffffff;
+  --theme-transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+.team-boston { --team: #008a3e; }
+.team-duke   { --team: #2a2acc; }
+.team-usa    { --team: #d90429; }
 
 body {
   font-family: 'Poppins', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: var(--theme-transition);
 }

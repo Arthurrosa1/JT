@@ -11,6 +11,7 @@ import './styles/components/navigator.css';
 import './styles/components/pills.css';
 import './styles/components/linkButton.css';
 import './styles/components/gallery.css';
+import './styles/components/themeToggle.css';
 
 import App from './App.jsx';
 
