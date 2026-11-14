@@ -4,7 +4,15 @@ const bg = (name) => `/assets/backgrounds/${name}`;
 /** Fundos animados: MP4 (bem mais leve que GIF) + primeiro quadro como placeholder. */
 export const backdrops = {
   home: { video: bg('home.mp4'), poster: bg('home-poster.gif') },
-  boston01: { video: bg('boston01.mp4'), poster: bg('boston01-poster.gif') },
+  // Um fundo por temporada de Boston, com um lance daquela temporada (fonte: Tenor)
+  boston01: { video: bg('boston01.mp4'), poster: bg('boston01-poster.gif') }, // 2017-18: grito na cara do LeBron (final do Leste 2018)
+  boston02: { video: bg('boston02.mp4'), poster: bg('boston02-poster.gif') }, // 2018-19: passa pelo Rubio e enterra sobre o Gobert (NBC Sports Boston, via GIPHY)
+  boston03: { video: bg('boston03.mp4'), poster: bg('boston03-poster.gif') }, // 2019-20: playoffs na "bolha" de Orlando
+  boston04: { video: bg('boston04.mp4'), poster: bg('boston04-poster.gif') }, // 2020-21: cesta da vitória contra os Bucks na abertura
+  boston05: { video: bg('boston05.mp4'), poster: bg('boston05-poster.gif') }, // 2021-22: cesta no estouro do relógio contra os Nets (playoffs)
+  boston06: { video: bg('boston06.mp4'), poster: bg('boston06-poster.png') }, // 2022-23: bola de 3 contra os Hawks (playoffs 2023)
+  boston07: { video: bg('boston07.mp4'), poster: bg('boston07-poster.png') }, // 2023-24: champanhe com o troféu do título
+  boston08: { video: bg('boston08.mp4'), poster: bg('boston08-poster.png') }, // 2024-25: bola de 3 que empata o jogo contra os Knicks no MSG
   usa01: { video: bg('usa01.mp4'), poster: bg('usa01-poster.gif') },
   usa02: { video: bg('usa02.mp4'), poster: bg('usa02-poster.gif') },
   // sem versão em vídeo disponível na fonte: segue como GIF externo, com placeholder local
@@ -12,6 +20,63 @@ export const backdrops = {
     gif: 'https://platform.sbnation.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/7962225/tat.0.gif?quality=90&strip=all&crop=0,0,100,100',
     poster: bg('duke01-poster.gif'),
   },
+};
+
+/**
+ * Fotos do Tatum em jogo, por temporada de Boston. Todas com licença livre
+ * (Creative Commons), por isso cada uma leva crédito e link para a fonte.
+ * Temporadas sem fotos livres em quadra ficam sem galeria.
+ */
+const bostonPhotos = {
+  // 2017-18
+  s01: [
+    { full: '/assets/images/boston/s01/1.jpg', thumb: '/assets/images/boston/s01/1-thumb.jpg', date: '2018-04-10', credit: 'Keith Allison (CC BY-SA 2.0)', source: 'https://commons.wikimedia.org/wiki/File:Tomas_Satoransky,_Jayson_Tatum_(41379784661).jpg' },
+    { full: '/assets/images/boston/s01/2.jpg', thumb: '/assets/images/boston/s01/2-thumb.jpg', date: '2018-04-10', credit: 'Keith Allison (CC BY-SA 2.0)', source: 'https://commons.wikimedia.org/wiki/File:Jayson_Tatum_(40666256774).jpg' },
+    { full: '/assets/images/boston/s01/3.jpg', thumb: '/assets/images/boston/s01/3-thumb.jpg', date: '2018-04-10', credit: 'Keith Allison (CC BY-SA 2.0)', source: 'https://commons.wikimedia.org/wiki/File:Jayson_Tatum_(2018).jpg' },
+  ],
+  // 2018-19
+  s02: [
+    { full: '/assets/images/boston/s02/1.jpg', thumb: '/assets/images/boston/s02/1-thumb.jpg', date: '2018-10-06', credit: 'Erik Drost (CC BY 2.0)', source: 'https://www.flickr.com/photos/62091376@N03/30343190327/' },
+    { full: '/assets/images/boston/s02/2.jpg', thumb: '/assets/images/boston/s02/2-thumb.jpg', date: '2018-10-06', credit: 'Erik Drost (CC BY 2.0)', source: 'https://www.flickr.com/photos/62091376@N03/43467461730/' },
+    { full: '/assets/images/boston/s02/3.jpg', thumb: '/assets/images/boston/s02/3-thumb.jpg', date: '2018-10-06', credit: 'Erik Drost (CC BY 2.0)', source: 'https://www.flickr.com/photos/62091376@N03/44559524004/' },
+  ],
+  // 2019-20: não há fotos livres em quadra; fotos de agência (direitos autorais dos
+  // respectivos donos), usadas com crédito e link para a reportagem de origem.
+  s03: [
+    { full: '/assets/images/boston/s03/1.jpg', thumb: '/assets/images/boston/s03/1.jpg', date: '2020-02-16', credit: 'Getty Images', source: 'https://chowderandchampions.com/2020/02/17/boston-celtics-nba-all-star-game-kemba-walker-jayson-tatum/3' },
+    { full: '/assets/images/boston/s03/2.jpg', thumb: '/assets/images/boston/s03/2.jpg', date: '2020-09-11', credit: 'NBAE/Getty Images', source: 'https://nbcsports.com/nba/news/jayson-tatum-follows-in-footsteps-of-his-idol-kobe-bryant-in-game-7-win' },
+    { full: '/assets/images/boston/s03/3.jpg', thumb: '/assets/images/boston/s03/3.jpg', date: '2020-02-23', credit: 'AP Photo/Marcio Jose Sanchez', source: 'https://bleacherreport.com/articles/2877711-even-in-la-win-jayson-tatum-exposed-crucial-lakers-weakness' },
+  ],
+  // 2020-21
+  s04: [
+    { full: '/assets/images/boston/s04/2.jpg', thumb: '/assets/images/boston/s04/2.jpg', date: '2021-05-18', credit: 'USA TODAY Sports', source: 'https://sports.yahoo.com/jayson-tatum-scores-50-points-034648139.html' },
+    { full: '/assets/images/boston/s04/3.jpg', thumb: '/assets/images/boston/s04/3.jpg', date: '2021-04-30', credit: 'AP Photo/Elise Amendola', source: 'https://bleacherreport.com/articles/2942231-celtics-jayson-tatum-drops-career-high-60-points-in-ot-comeback-win-vs-spurs' },
+    { full: '/assets/images/boston/s04/1.jpg', thumb: '/assets/images/boston/s04/1-thumb.jpg', date: '2021-05-05', credit: 'Jose Garcia (CC BY-SA 2.0)', source: 'https://www.flickr.com/photos/38359273@N00/51255692866/' },
+  ],
+  // 2021-22
+  s05: [
+    { full: '/assets/images/boston/s05/1.jpg', thumb: '/assets/images/boston/s05/1-thumb.jpg', date: '2021-11-15', credit: 'Erik Drost (CC BY 2.0)', source: 'https://www.flickr.com/photos/62091376@N03/51686834287/' },
+    { full: '/assets/images/boston/s05/2.jpg', thumb: '/assets/images/boston/s05/2-thumb.jpg', date: '2021-11-15', credit: 'Erik Drost (CC BY 2.0)', source: 'https://www.flickr.com/photos/62091376@N03/51687926198/' },
+    { full: '/assets/images/boston/s05/3.jpg', thumb: '/assets/images/boston/s05/3-thumb.jpg', date: '2021-11-15', credit: 'Erik Drost (CC BY 2.0)', source: 'https://www.flickr.com/photos/62091376@N03/51688517235/' },
+  ],
+  // 2022-23
+  s06: [
+    { full: '/assets/images/boston/s06/1.jpg', thumb: '/assets/images/boston/s06/1-thumb.jpg', date: '2023-01-16', credit: 'Matthew D. Britt (CC BY-NC-SA 2.0)', source: 'https://www.flickr.com/photos/20456447@N03/52638398317/' },
+    { full: '/assets/images/boston/s06/2.jpg', thumb: '/assets/images/boston/s06/2-thumb.jpg', date: '2023-01-16', credit: 'Matthew D. Britt (CC BY-NC-SA 2.0)', source: 'https://www.flickr.com/photos/20456447@N03/52642243760/' },
+    { full: '/assets/images/boston/s06/3.jpg', thumb: '/assets/images/boston/s06/3-thumb.jpg', date: '2023-01-16', credit: 'Matthew D. Britt (CC BY-NC-SA 2.0)', source: 'https://www.flickr.com/photos/20456447@N03/52638301915/' },
+  ],
+  // 2023-24: desfile do título em Boston (não há fotos livres em quadra)
+  s07: [
+    { full: '/assets/images/boston/s07/1.jpg', thumb: '/assets/images/boston/s07/1-thumb.jpg', date: '2024-06-21', credit: 'Brandon Wu (CC BY-NC-ND 2.0)', source: 'https://www.flickr.com/photos/94770557@N04/53808496707/' },
+    { full: '/assets/images/boston/s07/2.jpg', thumb: '/assets/images/boston/s07/2-thumb.jpg', date: '2024-06-21', credit: 'Brandon Wu (CC BY-NC-ND 2.0)', source: 'https://www.flickr.com/photos/94770557@N04/53809423641/' },
+    { full: '/assets/images/boston/s07/3.jpg', thumb: '/assets/images/boston/s07/3-thumb.jpg', date: '2024-06-21', credit: 'Brandon Wu (CC BY-NC-ND 2.0)', source: 'https://www.flickr.com/photos/94770557@N04/53809750794/' },
+  ],
+  // 2024-25
+  s08: [
+    { full: '/assets/images/boston/s08/1.jpg', thumb: '/assets/images/boston/s08/1-thumb.jpg', date: '2024-12-15', credit: 'Hameltion (CC BY-SA 4.0)', source: 'https://commons.wikimedia.org/wiki/File:Celtics_at_Wizards_2024-12-013.jpg' },
+    { full: '/assets/images/boston/s08/2.jpg', thumb: '/assets/images/boston/s08/2-thumb.jpg', date: '2024-12-15', credit: 'Hameltion (CC BY-SA 4.0)', source: 'https://commons.wikimedia.org/wiki/File:Celtics_at_Wizards_2024-12-020.jpg' },
+    { full: '/assets/images/boston/s08/3.jpg', thumb: '/assets/images/boston/s08/3-thumb.jpg', date: '2024-12-15', credit: 'Hameltion (CC BY-SA 4.0)', source: 'https://commons.wikimedia.org/wiki/File:Celtics_at_Wizards_2024-12-038.jpg' },
+  ],
 };
 
 /**
@@ -27,14 +92,10 @@ const sections = {
     pillsClassName: 'BostonPills',
     galleryClassName: 'galleryBoston',
     highlightsUrl: 'https://www.youtube.com/watch?v=uJD7gcpc4lg',
-    gallery: [1, 2, 3].map((n) => ({
-      full: `/assets/images/spiderman-tobey/movie-01/gallery/image-0${n}-full.jpg`,
-      thumb: `/assets/images/spiderman-tobey/movie-01/gallery/image-0${n}.png`,
-      alt: '',
-    })),
     seasons: [
       {
         backdrop: backdrops.boston01,
+        gallery: bostonPhotos.s01,
         label: 'Year: 2017-18',
         stats: { points: '13.9', assists: '1.6', rebounds: '5.0', steals: '1.0', blocks: '0.7' },
         paragraphs: [
@@ -42,7 +103,8 @@ const sections = {
         ],
       },
       {
-        backdrop: backdrops.boston01,
+        backdrop: backdrops.boston02,
+        gallery: bostonPhotos.s02,
         label: 'Year: 2018-19',
         stats: { points: '15.7', assists: '2.1', rebounds: '6.0', steals: '1.1', blocks: '0.7' },
         paragraphs: [
@@ -50,7 +112,8 @@ const sections = {
         ],
       },
       {
-        backdrop: backdrops.boston01,
+        backdrop: backdrops.boston03,
+        gallery: bostonPhotos.s03,
         label: 'Year: 2019-20',
         stats: { points: '23.4', assists: '3.0', rebounds: '7.0', steals: '1.4', blocks: '0.9' },
         paragraphs: [
@@ -58,7 +121,8 @@ const sections = {
         ],
       },
       {
-        backdrop: backdrops.boston01,
+        backdrop: backdrops.boston04,
+        gallery: bostonPhotos.s04,
         label: 'Year: 2020-21',
         stats: { points: '26.4', assists: '4.3', rebounds: '7.4', steals: '1.2', blocks: '0.5' },
         paragraphs: [
@@ -66,7 +130,8 @@ const sections = {
         ],
       },
       {
-        backdrop: backdrops.boston01,
+        backdrop: backdrops.boston05,
+        gallery: bostonPhotos.s05,
         label: 'Year: 2021-22',
         stats: { points: '26.9', assists: '4.4', rebounds: '8.0', steals: '1.0', blocks: '0.6' },
         paragraphs: [
@@ -74,7 +139,8 @@ const sections = {
         ],
       },
       {
-        backdrop: backdrops.boston01,
+        backdrop: backdrops.boston06,
+        gallery: bostonPhotos.s06,
         label: 'Year: 2022-23',
         stats: { points: '30.1', assists: '4.6', rebounds: '8.8', steals: '1.1', blocks: '0.7' },
         paragraphs: [
@@ -82,7 +148,8 @@ const sections = {
         ],
       },
       {
-        backdrop: backdrops.boston01,
+        backdrop: backdrops.boston07,
+        gallery: bostonPhotos.s07,
         label: 'Year: 2023-24',
         stats: { points: '26.9', assists: '4.9', rebounds: '8.1', steals: '1.0', blocks: '0.6' },
         paragraphs: [
@@ -90,7 +157,8 @@ const sections = {
         ],
       },
       {
-        backdrop: backdrops.boston01,
+        backdrop: backdrops.boston08,
+        gallery: bostonPhotos.s08,
         label: 'Year: 2024-25',
         stats: { points: '26.8', assists: '6.0', rebounds: '8.7', steals: '1.1', blocks: '0.5' },
         paragraphs: [

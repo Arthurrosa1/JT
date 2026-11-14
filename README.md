@@ -128,6 +128,8 @@ Qualquer outra URL redireciona para a home.
 
 Projeto de fã, sem fins comerciais e sem vínculo com a NBA, o Boston Celtics, a Duke University ou a USA Basketball.
 
-- Lances animados: [Tenor](https://tenor.com/), [Tumblr](https://www.tumblr.com/) e [SB Nation](https://www.sbnation.com/).
+- Lances animados: [Tenor](https://tenor.com/), [GIPHY](https://giphy.com/), [Tumblr](https://www.tumblr.com/) e [SB Nation](https://www.sbnation.com/).
+- Fotos das temporadas de Boston: [Wikimedia Commons](https://commons.wikimedia.org/wiki/Category:Jayson_Tatum) e [Flickr](https://www.flickr.com/), sob licenças Creative Commons. Autores: Keith Allison, Erik Drost, Jose Garcia, Matthew D. Britt, Brandon Wu e Hameltion. O crédito e o link de cada foto aparecem ao ampliá-la e estão em `bostonPhotos`, em [`src/data/sections.js`](src/data/sections.js). Algumas licenças (CC BY-NC-SA) proíbem uso comercial.
+- Fotos de 2019-20 e 2020-21: não existem fotos livres do Tatum em quadra nessas temporadas, então foram usadas fotos de agência (Getty Images, NBAE, AP e USA TODAY Sports). Elas têm **direitos autorais** dos respectivos donos e aparecem com crédito e link para a reportagem de origem. Se o site for publicado, essas fotos são as primeiras que precisam de autorização ou troca.
 - Vídeos de highlights: YouTube, com links para os canais originais.
 - Logos, nomes e imagens pertencem aos respectivos donos.

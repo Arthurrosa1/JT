@@ -18,6 +18,9 @@ export default function SectionPage() {
 
   if (!seasonData) return <Navigate to="/" replace />;
 
+  // Galeria própria da temporada (Boston) ou a da seção inteira (Duke, USA)
+  const gallery = seasonData.gallery ?? section.gallery ?? [];
+
   return (
     <div className={`wrapper team-${sectionId}`}>
       <ThemeToggle floating />
@@ -53,9 +56,11 @@ export default function SectionPage() {
           </div>
         </div>
 
-        <div className="MainContentBottom">
-          <Gallery className={section.galleryClassName} images={section.gallery} />
-        </div>
+        {gallery.length > 0 && (
+          <div className="MainContentBottom">
+            <Gallery className={section.galleryClassName} images={gallery} />
+          </div>
+        )}
       </div>
     </div>
   );

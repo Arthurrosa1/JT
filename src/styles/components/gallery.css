@@ -34,3 +34,12 @@
   height: 11vw;
   object-fit: cover;
 }
+
+/* Boston: fotos de fontes diferentes (retrato e paisagem). Miniaturas no mesmo
+   formato; a foto inteira aparece ao ampliar. */
+.galleryBoston ul li a img {
+  aspect-ratio: 3 / 2;
+  height: auto;
+  object-fit: cover;
+  object-position: center 30%;
+}
